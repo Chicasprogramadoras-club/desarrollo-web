@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Vocales con Lenguaje de Señas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #app-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #webcam-container {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #label-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .label-item {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-container">
+        <h1>Detector de Vocales con Lenguaje de Señas</h1>
+        <button type="button" onclick="init()">Iniciar</button>
+        <div id="webcam-container"></div>
+        <div id="label-container"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script>
+        // Más funciones de la API aquí:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // El enlace a tu modelo proporcionado por el panel de exportación de Teachable Machine
+        //const URL = "./mi_modelo/";
+        const URL = "./";
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Cargar el modelo de imagen y configurar la cámara web
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // cargar el modelo y metadatos
+            // Consulta tmImage.loadFromFiles() en la API para admitir archivos desde un selector de archivos
+            // o archivos desde tu disco duro local
+            // Nota: la biblioteca de poses agrega el objeto "tmImage" a tu ventana (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Función de conveniencia para configurar una cámara web
+            const flip = true; // si voltear la cámara web
+            webcam = new tmImage.Webcam(200, 200, flip); // ancho, alto, voltear
+            await webcam.setup(); // solicitar acceso a la cámara web
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // añadir elementos al DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) { // y etiquetas de clase
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        async function loop() {
+            webcam.update(); // actualizar el fotograma de la cámara web
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // ejecutar la imagen de la cámara web a través del modelo de imagen
+        async function predict() {
+            // predict puede recibir una imagen, video o elemento de lienzo HTML
+            const prediction = await model.predict(webcam.canvas);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }
+    </script>
+</body>
+
+</html>
