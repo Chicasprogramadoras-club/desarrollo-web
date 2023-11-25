@@ -25,9 +25,9 @@
   --eerie-black_70: hsla(240, 1%, 14%, 0.7);
   --granite-gray: hsl(0, 0%, 40%);
   --spanish-gray: hsl(0, 0%, 57%);
-  --oxford-blue: hsl(243, 95%, 8%);
+  --oxford-blue: hsla(240, 49%, 54%, 0.603);
   --eerie-black: hsl(214, 10%, 14%);
-  --xiketic: hsl(240, 57%, 52%);
+  --xiketic: hsl(240, 77%, 24%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
   --white_10: hsla(0, 0%, 100%, 0.1);
@@ -587,7 +587,7 @@ body {
 }
 
 .about .section-title {
-  margin-block-end: 30px;
+  margin-block-end: 50px;
   max-width: 18ch;
 }
 
