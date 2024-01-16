@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+:root{
+    
+    --header: rgba(237, 118, 6, 0.697);
+    --naranja: rgba(93, 7, 231, 0.484);
+    --blanco: #f8f8f8;
+    --gris: #d5d5d5;
+    --grisClaro: #f4f4f4;
+    --grisOscuto: #242424;
+    --grisMedio: #67676777;
+    --grisTransparente: #24242478;
+    
+}
+
+/*--------------header-------------*/
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+    background: url(../img/fundared.jpg);
+    background-size: cover;
+    box-shadow: -1px -11px 63px 23px rgba(0,0,0,0.75) inset;
+
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 20px;
+}
+.nav > h1{
+    font-family: 'Lato', sans-serif;
+    font-size: 2.6rem;
+    align-items: center;
+}
+.nav > h1 > span {
+    color:var(--naranja)
+}
+
+.paginas{
+    background-color: var(--grisTransparente);
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    margin-top: 5px;
+    width: 100px;
+    padding: 5px;
+
+}
+.menu:hover .paginas{
+    display: flex;
+}
+.paginas > li{
+    
+    list-style: none;
+    width: 100%;
+    
+}
+
+.paginas > li > a{
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    color: #fff;
+    padding: 4px;
+}
+.paginas > li > a:hover{
+    color: var(--naranja);
+    
+}
+.menu{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    
+}
+.menu > li{
+    list-style: none;
+}
+.menu > li > a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.menu > li > a:hover{
+    color: var(--naranja);
+    transition: all .3s ease-in;
+}
+.contenido-header{
+ margin-right: 1rem;   
+ text-align: right;
+}
+.contenido-header > h1{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.contenido-header > p{
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+/*-------------------------------*/
+/*--------------contenido-----------------*/
+main{
+ background: var(--blanco);
+}
+.contenedor{
+    width: 100%;
+
+    overflow: hidden;
+}
+.contenido-contenedor{
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+    column-gap: 10px;
+}
+.card{
+    margin: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gris);
+    border-radius: 15px 2px 15px 2px;
+    box-shadow: -8px 14px 17px -8px rgba(0,0,0,0.34), 0px 0px 75px -30px rgba(0,0,0,0.34) inset;
+    color: var(--grisOscuto);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+
+/*-----------footer-----------*/
+footer{
+    background: var(--grisOscuto);
+    color: #fff;
+    font-family: 'lato', sans-serif;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.iconos{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.iconos > li > a{
+    text-decoration: none;
+    color: #fff;
+    
+}
+.iconos > li > a > i{
+    
+    color: var(--naranja);
+    font-size: 2rem;
+    border: var(--naranja) 2px solid;
+    border-radius: 50%;
+    margin-right: 5px;
+    padding: 0 2px;
+}
+.iconos > li > a > i:hover{
+    background-color: var(--naranja);
+    color: var(--grisClaro);
+    
+}
+
+
+/*--------------query--------------*/
+@media (max-width: 990px) {
+    .nav{
+        flex-direction: column;
+        padding: 0;
+    }
+    .nav > h1{
+        margin-left: 10px;
+    }
+    .menu{
+        background-color: var(--grisTransparente);
+        max-width: 100%;
+        padding: 10px;
+        gap: 15px;
+        justify-content: center;
+    }
+   
+    .iconos{
+        flex-direction: column;
+    }
+}
