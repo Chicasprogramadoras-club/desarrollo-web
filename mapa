@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Conceptual: Tiahuanaco y los Ideogramas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .concept {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mapa Conceptual: Interpretación de Jesús Miranda Luizaga</h1>
+
+    <div class="concept">
+        <h2>Contexto General: Tiahuanaco</h2>
+        <ul>
+            <li>Ubicación: Bolivia, cultura precolombina.</li>
+            <li>Importancia: Centro ceremonial y astronómico de la cultura andina.</li>
+        </ul>
+    </div>
+
+    <div class="concept">
+        <h2>Pirámide de Akapana</h2>
+        <ul>
+            <li>Descripción: Pirámide escalonada, estructura ceremonial.</li>
+            <li>Iconografía y Arquitectura: Representación simbólica y cósmica.</li>
+        </ul>
+    </div>
+
+    <div class="concept">
+        <h2>Interpretación de Jesús Miranda Luizaga</h2>
+        <ul>
+            <li>Objetivo: Explicar el simbolismo astronómico y ritual de los ideogramas en Akapana.</li>
+            <li>Método: Identificación de ideogramas vinculados a cuerpos celestes.</li>
+        </ul>
+    </div>
+
+    <div class="concept">
+        <h2>Ideogramas de los Astros Principales</h2>
+        <ul>
+            <li><strong>Venus:</strong>
+                <ul>
+                    <li>Simbolismo: "Estrella de la mañana" y "Estrella de la tarde".</li>
+                    <li>Significado en Tiahuanaco: Marcador de ciclos agrícolas y rituales.</li>
+                </ul>
+            </li>
+            <li><strong>Mercurio:</strong>
+                <ul>
+                    <li>Simbolismo: Movimiento rápido y cercano al Sol.</li>
+                    <li>Significado en Tiahuanaco: Asociado a la frecuencia de eventos y su tránsito rápido.</li>
+                </ul>
+            </li>
+            <li><strong>Marte:</strong>
+                <ul>
+                    <li>Simbolismo: Fuerza, color rojo, representativo de poder.</li>
+                    <li>Significado en Tiahuanaco: Reflejo de transformaciones y eventos extraordinarios.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="concept">
+        <h2>Vínculo entre Cosmos y Espiritualidad Andina</h2>
+        <ul>
+            <li>Cosmovisión Andina: Los astros influyen en la vida cotidiana, rituales y agricultura.</li>
+            <li>Expresión Cultural: Los ideogramas como reflejo de una visión integrada del universo y la espiritualidad.</li>
+        </ul>
+    </div>
+
+    <div class="concept">
+        <h2>Debate Académico</h2>
+        <ul>
+            <li>Interpretación en Debate: La visión de Luizaga es una de varias lecturas posibles.</li>
+            <li>Complejidad del Simbolismo: La iconografía de Tiahuanaco ofrece interpretaciones diversas.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
