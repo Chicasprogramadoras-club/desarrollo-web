@@ -1,117 +1,601 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chicas programadoras</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/normalized2.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chicas Programadoras - Santa Cruz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <style>
+    :root {
+      --primary-lila: #a78bfa;
+      --primary-pink: #f9a8d4;
+      --primary-green: #34d399;
+      --text-dark: #1f2937;
+      --text-light: #ffffff;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <nav class="nav">
-            <h1>Chicas <span>Programadoras</span></h1>
-            <!-- <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li>
-                    <a href="#"> <i class="uil uil-angle-down"></i> Paginas</a> 
-                    <ul class="paginas">
-                        <li> <a href="#">objeto3d</a> </li>
-                        <li> <a href="#">Galeria</a> </li>
-                    </ul>
-                </li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Registrar</a></li>
-            </ul> -->
-        </nav>
-        <div class="contenido-header">
-            <h1>Lorem ipsum dolor</h1>
-            <p>architecto incidunt atque similique, optio enim. Explicabo maiores architecto ipsa!</p>
-        </div>
-    </header>
+
+<body class="bg-gradient-to-br from-purple-100 via-pink-100 to-green-100 text-gray-800">
+
+  <!-- Header -->
+<header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+  <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+    <!-- Logo y nombre -->
+    <div class="flex items-center space-x-4">
+      <img src="asset/img/logo/logo1.jpg" alt="Logo"
+        class="w-12 h-12 transform transition duration-300 ease-in-out hover:scale-110">
+      <h1 class="text-3xl font-bold">
+        Chicas <span class="text-green-300">Programadoras</span>
+      </h1>
+    </div>
+
+    <!-- Menú de navegación -->
+    <ul class="flex space-x-6">
+      <li><a href="#noticias" class="hover:underline hover:text-green-300 transition duration-200">Noticias</a></li>
+      <li><a href="#proyectos" class="hover:underline hover:text-green-300 transition duration-200">Proyectos</a></li>
+      <li><a href="#profesores" class="hover:underline hover:text-green-300 transition duration-200">Profesores</a></li>
+      <li><a href="#galerias" class="hover:underline hover:text-green-300 transition duration-200">Galerías</a></li>
+      <li><a href="#contacto" class="hover:underline hover:text-green-300 transition duration-200">Contacto</a></li>
+    </ul>
+
+    <!-- Sección de Login/Registro -->
+    <div class="flex items-center space-x-4">
+      <a href="#login"
+        class="text-white py-2 px-4 rounded-lg border border-white hover:bg-white hover:text-purple-500 transition duration-300">Login</a>
+      <a href="#register"
+        class="text-white py-2 px-4 rounded-lg border border-white hover:bg-white hover:text-purple-500 transition duration-300">Registro</a>
+    </div>
+  </nav>
+
+  <!-- Sección de bienvenida -->
+  <div class="text-center py-10">
+    <h1 class="text-4xl font-bold mb-4">¡Empoderando la Tecnología!</h1>
+    <p class="text-lg">Un club para chicas apasionadas por la programación, donde 
+      compartimos conocimientos, proyectos y construimos el futuro
+    tecnológico en Santa Cruz, Bolivia..</p>
+  </div>
+
+</header>
 
 
-    <main>
-        <article class="contenedor contenido-contenedor">
-            <div class="card">
-                <img src="img/fundared.jpg" alt="" width="200">
-                <a href="tesai/index.html"><h2>cu-project</h2> </a>
-                <p>Autora:Camila</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis sapiente molestiae alias expedita ipsam dolor, sequi rerum.</p>
-               
-            </div>
+  <!-- Carrusel -->
+<!-- Carrusel -->
+<section class="my-10">
+  <div class="relative swiper-container">
+    <!-- Carrusel Imágenes -->
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="asset/img/portada1200x400.jpg" alt="Foto 1" class="w-full h-[400px] object-cover">
+      </div>
+      <div class="swiper-slide">
+        <img src="asset/img/portada2.jpg" alt="Foto 2" class="w-full h-[400px] object-cover">
+      </div>
+      <div class="swiper-slide">
+        <img src="asset/img/IMG_20231111_163005.jpg" alt="Foto 3" class="w-full h-[400px] object-cover">
+      </div>
+    </div>
 
-            <div class="card">
-                <img src="img/fundared.jpg" alt="" width="200">
-                <a href="tesai/index.html"><h2>Tesai</h2> </a>
-                <p>Autora:Melani</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis sapiente molestiae alias expedita ipsam dolor, sequi rerum.</p>
-               
-            </div>
-            <div class="card">
-                <img src="img/fundared.jpg" alt="" width="200">
-                <a href="nao/index.html"><h2>Nao</h2> </a>
-                <p>Autora:Nicole</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis sapiente molestiae alias expedita ipsam dolor, sequi rerum.</p>
-            </div>
-            <div class="card">
-                <img src="img/fundared.jpg" alt="" width="200">
-                
-                <a href="explore/index.html"><h2>Explore</h2></a>
-                <p>Autora:Fabiola</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis sapiente molestiae alias expedita ipsam dolor, sequi rerum.</p>
-            </div>
+    <!-- Contenido Estático (Botón + Redes Sociales) -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+      <!-- Botón Inscribirse -->
+      <a href="#inscripcion"
+        class="px-6 py-3 text-lg font-bold text-white bg-purple-600 rounded-lg shadow-lg hover:bg-purple-700 transition">
+        Inscríbete
+      </a>
+      <!-- Iconos Redes Sociales -->
+      <div class="flex space-x-4 text-white text-3xl mt-4">
+        <a href="https://facebook.com" target="_blank" class="hover:text-blue-400"><i class="uil uil-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank" class="hover:text-pink-400"><i
+            class="uil uil-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank" class="hover:text-blue-300"><i class="uil uil-twitter"></i></a>
+      </div>
+    </div>
 
-            <div class="card">
-                <img src="img/fundared.jpg" alt="" width="200">
-                <a href="golden/index.html"><h2>Golden</h2></a>
-                <p>Autora:Daramis</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam debitis sapiente molestiae alias expedita ipsam dolor, sequi rerum.</p>
-            </div>
+    <!-- Paginación -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- Script Swiper.js -->
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    effect: 'fade', // Transición suave con opacidad
+  });
+</script>
+
+<!-- Estilos personalizados -->
+<style>
+  .swiper-container {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .swiper-slide img {
+    filter: brightness(50%);
+    /* Oscurece las imágenes para destacar el contenido estático */
+  }
+
+  .swiper-slide img:hover {
+    filter: brightness(70%);
+  }
+
+  @media (max-width: 768px) {
+    .swiper-slide img {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .swiper-slide img {
+      height: 200px;
+    }
+  }
+</style>
 
 
+  <!-- Noticias -->
+  <section id="noticias" class="container mx-auto my-10">
+    <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--primary-lila)">Últimas Noticias</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div
+        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-purple-500 transition-transform transform hover:scale-105">
+        <h3 class="text-xl font-bold mb-3 text-purple-700">Hackathon Santa Cruz</h3>
+        <p class="text-gray-700 mb-4">Participa en el evento más grande de tecnología en la ciudad. ¡Regístrate ahora!
+        </p>
+        <a href="#" class="text-purple-600 hover:underline">Leer más...</a>
+      </div>
+      <div
+        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-pink-500 transition-transform transform hover:scale-105">
+        <h3 class="text-xl font-bold mb-3 text-pink-700">Nuevas Herramientas</h3>
+        <p class="text-gray-700 mb-4">Explora los últimos recursos para desarrolladores en nuestra comunidad.</p>
+        <a href="#" class="text-pink-600 hover:underline">Leer más...</a>
+      </div>
+      <div
+        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-green-500 transition-transform transform hover:scale-105">
+        <h3 class="text-xl font-bold mb-3 text-green-700">Convocatoria de Cursos</h3>
+        <p class="text-gray-700 mb-4">Inscríbete en los cursos de programación para todos los niveles.</p>
+        <a href="#" class="text-green-600 hover:underline">Leer más...</a>
+      </div>
+    </div>
+  </section>
 
+    <!-- Proyectos -->
+<!-- Proyectos -->
+<section id="proyectos" class="container mx-auto my-10 px-4">
+  <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-pink)">Proyectos Destacados</h2>
 
-        </article>
+  <!-- Contenedor Proyectos -->
+  <div id="proyecto-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Tarjetas Proyectos (Cargar dinámicamente con JavaScript) -->
+  </div>
 
-        <div class="mentores">
-            <h1>Luishiño Pericena</h1>
-            <p>architecto incidunt atque similique, optio enim. Explicabo maiores architecto ipsa!</p>
-        </div>
+  <!-- Paginación -->
+  <div class="flex justify-center items-center mt-6 space-x-4">
+    <button id="prev-proyecto-btn"
+      class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition disabled:opacity-50 disabled:cursor-not-allowed">
+      Anterior
+    </button>
+    <button id="next-proyecto-btn"
+      class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition disabled:opacity-50 disabled:cursor-not-allowed">
+      Siguiente
+    </button>
+  </div>
+</section>
 
-        <div class="mentores">
-            <h1>Fernando Cayola</h1>
-            <p>architecto incidunt atque similique, optio enim. Explicabo maiores architecto ipsa!</p>
-        </div>
+<!-- Estilos -->
+<style>
+  .proyecto-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-        <div class="mentores">
-            <h1>Marcela</h1>
-            <p>architecto incidunt atque similique, optio enim. Explicabo maiores architecto ipsa!</p>
-        </div>
+  .proyecto-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  }
 
-    </main>
+  .social-icons a {
+    transition: transform 0.3s, color 0.3s;
+  }
 
-    <footer>
-        <div class="cotactos">
-            <ul class="iconos">
-              <li >
-                <a href="#">
-                    <i class="uil uil-phone-alt"></i><span>000000</span>
-                </a> 
-              </li>
-              
-              <li>
-                <a href="#">
-                    <i class="uil uil-envelope"></i><span>chicasprogramadoras@gamil.com</span>
-                </a>
-              </li>
-              
-            </ul>
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: var(--primary-pink);
+  }
+</style>
+
+<!-- Script -->
+<script>
+  // Lista de proyectos (Datos de ejemplo)
+  const proyectos = [
+    {
+      titulo: 'cu-project',
+      autora: 'Camila',
+      descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      img: 'asset/img/IMG_20221001_175958.jpg',
+      redes: {
+        github: 'https://github.com/camila/cu-project',
+        demo: 'https://demo.cuproject.com',
+      },
+    },
+    {
+      titulo: 'ia-assistant',
+      autora: 'Carlos López',
+      descripcion: 'Un asistente basado en inteligencia artificial para mejorar la productividad.',
+      img: 'asset/img/proyecto2.jpg',
+      redes: {
+        github: 'https://github.com/carlos/ia-assistant',
+        demo: 'https://demo.ia-assistant.com',
+      },
+    },
+    {
+      titulo: 'seguro-max',
+      autora: 'Luishiño Pericena',
+      descripcion: 'Un sistema seguro para gestionar información confidencial.',
+      img: 'asset/img/proyecto3.jpg',
+      redes: {
+        github: 'https://github.com/luishino/seguro-max',
+        demo: 'https://demo.seguro-max.com',
+      },
+    },
+    // Añadir más proyectos...
+  ];
+
+  // Estado de paginación
+  const proyectosPerPage = 3;
+  let currentProyectoPage = 1;
+
+  // Referencias a los elementos
+  const proyectoContainer = document.getElementById('proyecto-container');
+  const prevProyectoBtn = document.getElementById('prev-proyecto-btn');
+  const nextProyectoBtn = document.getElementById('next-proyecto-btn');
+
+  // Renderizar Proyectos
+  function renderProyectos() {
+    proyectoContainer.innerHTML = '';
+    const startIndex = (currentProyectoPage - 1) * proyectosPerPage;
+    const endIndex = startIndex + proyectosPerPage;
+    const visibleProyectos = proyectos.slice(startIndex, endIndex);
+
+    visibleProyectos.forEach((proyecto) => {
+      const proyectoCard = document.createElement('div');
+      proyectoCard.className = 'proyecto-card bg-white shadow-md rounded-lg overflow-hidden border border-pink-300';
+      proyectoCard.innerHTML = `
+        <img src="${proyecto.img}" alt="${proyecto.titulo}" class="w-full h-40 object-cover">
+        <div class="p-5">
+          <h2 class="text-xl font-bold text-green-600 mb-2"><a href="#">${proyecto.titulo}</a></h2>
+          <p class="text-sm text-gray-600 mb-2">Autora: ${proyecto.autora}</p>
+          <p class="text-gray-700 mb-3">${proyecto.descripcion}</p>
+          <div class="social-icons flex justify-center space-x-4 text-2xl text-gray-500">
+            <a href="${proyecto.redes.github}" target="_blank" class="hover:text-gray-800"><i class="uil uil-github"></i></a>
+            <a href="${proyecto.redes.demo}" target="_blank" class="hover:text-blue-500"><i class="uil uil-external-link-alt"></i></a>
           </div>
-          <p>Copyright © 2023 - All Rights Reserved - chicas programadoras</p>
+        </div>
+      `;
+      proyectoContainer.appendChild(proyectoCard);
+    });
 
-    </footer>
+    // Actualizar estado de los botones
+    prevProyectoBtn.disabled = currentProyectoPage === 1;
+    nextProyectoBtn.disabled = endIndex >= proyectos.length;
+  }
+
+  // Manejar eventos de paginación
+  prevProyectoBtn.addEventListener('click', () => {
+    if (currentProyectoPage > 1) {
+      currentProyectoPage--;
+      renderProyectos();
+    }
+  });
+
+  nextProyectoBtn.addEventListener('click', () => {
+    if (currentProyectoPage * proyectosPerPage < proyectos.length) {
+      currentProyectoPage++;
+      renderProyectos();
+    }
+  });
+
+  // Inicializar
+  renderProyectos();
+</script>
+
+
+  <!-- Profesores -->
+<!-- Profesores -->
+<section id="profesores" class="container mx-auto my-10 px-4">
+  <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-green)">Nuestros Profesores</h2>
+
+  <!-- Contenedor Profesores -->
+  <div id="profesor-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Tarjetas Profesores (Cargar dinámicamente con JavaScript) -->
+  </div>
+
+  <!-- Paginación -->
+  <div class="flex justify-center items-center mt-6 space-x-4">
+    <button id="prev-btn"
+      class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition disabled:opacity-50 disabled:cursor-not-allowed">
+      Anterior
+    </button>
+    <button id="next-btn"
+      class="px-4 py-2 bg-gray-300 rounded-lg hover:bg-gray-400 transition disabled:opacity-50 disabled:cursor-not-allowed">
+      Siguiente
+    </button>
+  </div>
+</section>
+
+<!-- Estilos -->
+<style>
+  .prof-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .prof-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-icons a {
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: var(--primary-green);
+  }
+</style>
+
+<!-- Script -->
+<script>
+  // Lista de profesores (Datos de ejemplo)
+  const profesores = [
+    {
+      nombre: 'Luishiño Pericena',
+      especialidad: 'Desarrollo Web',
+      img: 'asset/img/mentor/Luishiño.png',
+      redes: {
+        facebook: 'https://facebook.com/luishino',
+        instagram: 'https://instagram.com/luishino',
+        twitter: 'https://twitter.com/luishino',
+      },
+    },
+    {
+      nombre: 'María García',
+      especialidad: 'Inteligencia Artificial',
+      img: 'asset/img/mentor/Maria.png',
+      redes: {
+        facebook: 'https://facebook.com/maria',
+        instagram: 'https://instagram.com/maria',
+        twitter: 'https://twitter.com/maria',
+      },
+    },
+    {
+      nombre: 'Carlos López',
+      especialidad: 'Seguridad Informática',
+      img: 'asset/img/mentor/Carlos.png',
+      redes: {
+        facebook: 'https://facebook.com/carlos',
+        instagram: 'https://instagram.com/carlos',
+        twitter: 'https://twitter.com/carlos',
+      },
+    },
+    // Añadir más profesores...
+        {
+      nombre: 'Carlos López',
+      especialidad: 'Seguridad Informática',
+      img: 'asset/img/mentor/Carlos.png',
+      redes: {
+        facebook: 'https://facebook.com/carlos',
+        instagram: 'https://instagram.com/carlos',
+        twitter: 'https://twitter.com/carlos',
+      },
+    },
+        {
+      nombre: 'Carlos López',
+      especialidad: 'Seguridad Informática',
+      img: 'asset/img/mentor/Carlos.png',
+      redes: {
+        facebook: 'https://facebook.com/carlos',
+        instagram: 'https://instagram.com/carlos',
+        twitter: 'https://twitter.com/carlos',
+      },
+    },
+        {
+      nombre: 'Carlos López',
+      especialidad: 'Seguridad Informática',
+      img: 'asset/img/mentor/Carlos.png',
+      redes: {
+        facebook: 'https://facebook.com/carlos',
+        instagram: 'https://instagram.com/carlos',
+        twitter: 'https://twitter.com/carlos',
+      },
+    },
+  ];
+
+  // Estado de paginación
+  const itemsPerPage = 3;
+  let currentPage = 1;
+
+  // Referencias a los elementos
+  const profesorContainer = document.getElementById('profesor-container');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  // Renderizar Profesores
+  function renderProfesores() {
+    profesorContainer.innerHTML = '';
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const visibleProfesores = profesores.slice(startIndex, endIndex);
+
+    visibleProfesores.forEach((profesor) => {
+      const profCard = document.createElement('div');
+      profCard.className = 'prof-card bg-white shadow-lg rounded-lg p-5 text-center';
+      profCard.innerHTML = `
+        <img src="${profesor.img}" alt="${profesor.nombre}" class="mx-auto rounded-full mb-4">
+        <h3 class="text-xl font-bold mb-2">${profesor.nombre}</h3>
+        <p class="text-gray-700">${profesor.especialidad}</p>
+        <div class="social-icons flex justify-center space-x-4 mt-3 text-2xl text-gray-500">
+          <a href="${profesor.redes.facebook}" target="_blank" class="hover:text-blue-600"><i class="uil uil-facebook"></i></a>
+          <a href="${profesor.redes.instagram}" target="_blank" class="hover:text-pink-500"><i class="uil uil-instagram"></i></a>
+          <a href="${profesor.redes.twitter}" target="_blank" class="hover:text-blue-400"><i class="uil uil-twitter"></i></a>
+        </div>
+      `;
+      profesorContainer.appendChild(profCard);
+    });
+
+    // Actualizar estado de los botones
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = endIndex >= profesores.length;
+  }
+
+  // Manejar eventos de paginación
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderProfesores();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentPage * itemsPerPage < profesores.length) {
+      currentPage++;
+      renderProfesores();
+    }
+  });
+
+  // Inicializar
+  renderProfesores();
+</script>
+
+
+<!-- Galerías -->
+<section id="galerias" class="container mx-auto my-10 px-4">
+  <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--primary-pink)">Galerías</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Galería de Fotos -->
+    <div id="fotos" class="space-y-6">
+      <h3 class="text-xl font-bold mb-3 text-purple-700">Galería de Fotos</h3>
+
+      <!-- Filtro por Año -->
+      <div class="flex justify-center gap-4 mb-6">
+        <select class="border p-2 rounded-lg" id="selectYear" onchange="filterByYear()">
+          <option value="2023" selected>Fotos de 2023</option>
+          <option value="2022">Fotos de 2022</option>
+        </select>
+      </div>
+
+      <!-- Fotos -->
+      <section id="photosSection" class="space-y-6">
+        <!-- Fotos del 2023 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="photos2023">
+          <img src="asset/img/IMG_20230819_161752.jpg" alt="Foto 1" class="rounded-lg object-cover w-full h-48 md:h-64">
+          <img src="asset/img/IMG_20231111_162954.jpg" alt="Foto 2" class="rounded-lg object-cover w-full h-48 md:h-64">
+          <img src="asset/img/IMG_20231111_162951.jpg" alt="Foto 3" class="rounded-lg object-cover w-full h-48 md:h-64">
+        </div>
+
+        <!-- Fotos del 2022 (ocultas por defecto) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden" id="photos2022">
+          <img src="asset/img/IMG_20221001_175958.jpg" alt="Foto 4" class="rounded-lg object-cover w-full h-48 md:h-64">
+          <img src="asset/img/IMG_20221101_175958.jpg" alt="Foto 5" class="rounded-lg object-cover w-full h-48 md:h-64">
+          <img src="asset/img/IMG_20221102_161752.jpg" alt="Foto 6" class="rounded-lg object-cover w-full h-48 md:h-64">
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  function changeGallery(galleryType) {
+    if (galleryType === 'fotos') {
+      document.getElementById('fotos').classList.remove('hidden');
+      document.getElementById('selectFotos').selectedIndex = 0;
+    } else {
+      document.getElementById('fotos').classList.add('hidden');
+      document.getElementById('selectFotos').selectedIndex = 1;
+    }
+  }
+
+  function filterByYear() {
+    var selectedYear = document.getElementById('selectYear').value;
+
+    // Ocultar todas las fotos
+    document.getElementById('photos2023').classList.add('hidden');
+    document.getElementById('photos2022').classList.add('hidden');
+
+    // Mostrar fotos del año seleccionado
+    if (selectedYear === '2023') {
+      document.getElementById('photos2023').classList.remove('hidden');
+    } else {
+      document.getElementById('photos2022').classList.remove('hidden');
+    }
+  }
+</script>
+
+
+<section class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-10">
+  <!-- Galería de Videos -->
+  <div class="container mx-auto px-4 space-y-6">
+    <h3 class="text-3xl font-semibold text-center text-green-800 mb-8">Galería de Videos</h3>
+
+    <!-- Contenedor de videos con un grid adaptativo -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="video-container bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+        <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
+          controls>
+          <source src="asset/video/video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-container bg-white p-4 rounded-lg shadow-lg overflow-hidden">
+        <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
+          controls>
+          <source src="asset/video/video.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Más videos aquí -->
+    </div>
+  </div>
+</section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-10">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
+      <div class="flex justify-center space-x-6">
+        <a href="https://facebook.com" target="_blank" class="text-4xl hover:text-yellow-300"><i
+            class="uil uil-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" class="text-4xl hover:text-yellow-300"><i
+            class="uil uil-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-purple-700 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Chicas Programadoras</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
+
