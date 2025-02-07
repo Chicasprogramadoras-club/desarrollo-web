@@ -22,48 +22,75 @@
 
 <body class="bg-gradient-to-br from-purple-100 via-pink-100 to-green-100 text-gray-800">
 
-  <!-- Header -->
-<header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+<header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white relative">
   <nav class="container mx-auto flex justify-between items-center py-4 px-6">
     <!-- Logo y nombre -->
     <div class="flex items-center space-x-4">
       <img src="asset/img/logo/logo1.jpg" alt="Logo"
-        class="w-12 h-12 transform transition duration-300 ease-in-out hover:scale-110">
-      <h1 class="text-3xl font-bold">
+        class="w-12 h-12 rounded-full transform transition duration-300 hover:scale-110">
+      <h1 class="text-2xl md:text-3xl font-bold">
         Chicas <span class="text-green-300">Programadoras</span>
       </h1>
     </div>
 
-    <!-- Menú de navegación -->
-    <ul class="flex space-x-6">
+    <!-- Botón de hamburguesa -->
+    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">menu
+      <i class="bx bx-menu text-3xl"></i>
+    </button>
+
+    <!-- Menú horizontal -->
+    <ul class="hidden md:flex space-x-6 text-lg font-medium">
       <li><a href="#noticias" class="hover:underline hover:text-green-300 transition duration-200">Noticias</a></li>
       <li><a href="#proyectos" class="hover:underline hover:text-green-300 transition duration-200">Proyectos</a></li>
       <li><a href="#profesores" class="hover:underline hover:text-green-300 transition duration-200">Profesores</a></li>
       <li><a href="#galerias" class="hover:underline hover:text-green-300 transition duration-200">Galerías</a></li>
       <li><a href="#contacto" class="hover:underline hover:text-green-300 transition duration-200">Contacto</a></li>
     </ul>
-
-    <!-- Sección de Login/Registro -->
-    <div class="flex items-center space-x-4">
-      <a href="#login"
-        class="text-white py-2 px-4 rounded-lg border border-white hover:bg-white hover:text-purple-500 transition duration-300">Login</a>
-      <a href="#register"
-        class="text-white py-2 px-4 rounded-lg border border-white hover:bg-white hover:text-purple-500 transition duration-300">Registro</a>
-    </div>
   </nav>
 
-  <!-- Sección de bienvenida -->
-  <div class="text-center py-10">
-    <h1 class="text-4xl font-bold mb-4">¡Empoderando la Tecnología!</h1>
-    <p class="text-lg">Un club para chicas apasionadas por la programación, donde 
-      compartimos conocimientos, proyectos y construimos el futuro
-    tecnológico en Santa Cruz, Bolivia..</p>
+  <!-- Menú desplegable -->
+  <div id="mobile-menu"
+    class="hidden fixed top-0 right-0 w-80 h-full bg-purple-700 text-white z-50 p-6 transform translate-x-full transition-transform duration-300">
+    <button id="close-menu" class="absolute top-4 right-4 text-white text-3xl focus:outline-none">
+      <i class="bx bx-x"></i>
+    </button>
+    <nav class="flex flex-col mt-8 space-y-4">
+      <a href="#noticias"
+        class="hover:bg-purple-500 w-full text-center py-3 rounded transition duration-200">Noticias</a>
+      <a href="#proyectos"
+        class="hover:bg-purple-500 w-full text-center py-3 rounded transition duration-200">Proyectos</a>
+      <a href="#profesores"
+        class="hover:bg-purple-500 w-full text-center py-3 rounded transition duration-200">Profesores</a>
+      <a href="#galerias"
+        class="hover:bg-purple-500 w-full text-center py-3 rounded transition duration-200">Galerías</a>
+      <a href="#contacto"
+        class="hover:bg-purple-500 w-full text-center py-3 rounded transition duration-200">Contacto</a>
+      <a href="#login"
+        class="py-3 px-4 w-full text-center rounded-lg border border-white hover:bg-white hover:text-purple-700 transition duration-300">Login</a>
+      <a href="#register"
+        class="py-3 px-4 w-full text-center rounded-lg border border-white hover:bg-white hover:text-purple-700 transition duration-300">Registro</a>
+    </nav>
   </div>
-
 </header>
 
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
 
-  <!-- Carrusel -->
+  const closeMenuHandler = () => {
+    mobileMenu.classList.add('translate-x-full');
+  };
+
+  const openMenuHandler = () => {
+    mobileMenu.classList.remove('translate-x-full');
+  };
+
+  menuToggle.addEventListener('click', openMenuHandler);
+  closeMenu.addEventListener('click', closeMenuHandler);
+</script>
+
+
 <!-- Carrusel -->
 <section class="my-10">
   <div class="relative swiper-container">
