@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chicas Programadoras - Santa Cruz</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
@@ -22,19 +23,28 @@
 
 <body class="bg-gradient-to-br from-purple-100 via-pink-100 to-green-100 text-gray-800">
 
-<header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white relative">
-  <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+<header class="bg-gradient-to-r from-purple-500 to-pink-500 text-white dark:bg-gray-900 relative">
+  <nav class="container mx-auto flex flex-wrap justify-between items-center py-4 px-6">
     <!-- Logo y nombre -->
     <div class="flex items-center space-x-4">
       <img src="asset/img/logo/logo1.jpg" alt="Logo"
         class="w-12 h-12 rounded-full transform transition duration-300 hover:scale-110">
       <h1 class="text-2xl md:text-3xl font-bold">
-        Chicas <span class="text-green-300">Programadoras</span>
+        Chicas <span class="text-green-300 dark:text-green-400">Programadoras</span>
       </h1>
     </div>
 
+    <!-- Buscador centrado -->
+    <div class="hidden md:flex flex-grow justify-center">
+      <div class="relative w-1/3">
+        <input type="text" placeholder="Buscar..."
+          class="w-full py-2 px-4 rounded-lg bg-white text-gray-800 focus:ring-2 focus:ring-purple-500 outline-none dark:bg-gray-800 dark:text-white">
+        <i class="bx bx-search absolute right-3 top-2.5 text-gray-500 dark:text-gray-400"></i>
+      </div>
+    </div>
+
     <!-- Botón de hamburguesa -->
-    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">menu
+    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
       <i class="bx bx-menu text-3xl"></i>
     </button>
 
@@ -71,28 +81,58 @@
         class="py-3 px-4 w-full text-center rounded-lg border border-white hover:bg-white hover:text-purple-700 transition duration-300">Registro</a>
     </nav>
   </div>
+
+  <!-- Botón de modo oscuro -->
+  <button id="theme-toggle" class="absolute top-4 right-16 text-white text-2xl focus:outline-none">
+    <i id="theme-toggle-dark-icon" class="bx bx-moon hidden"></i>
+    <i id="theme-toggle-light-icon" class="bx bx-sun hidden"></i>
+  </button>
 </header>
 
 <script>
+  // Menú móvil
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMenu = document.getElementById('close-menu');
 
-  const closeMenuHandler = () => {
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('translate-x-full');
+  });
+
+  closeMenu.addEventListener('click', () => {
     mobileMenu.classList.add('translate-x-full');
-  };
+    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+  });
 
-  const openMenuHandler = () => {
-    mobileMenu.classList.remove('translate-x-full');
-  };
+  // Modo oscuro
+  const themeToggle = document.getElementById('theme-toggle');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
 
-  menuToggle.addEventListener('click', openMenuHandler);
-  closeMenu.addEventListener('click', closeMenuHandler);
+  if (
+    localStorage.getItem('color-theme') === 'dark' ||
+    (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    document.documentElement.classList.add('dark');
+    darkIcon.classList.remove('hidden');
+  } else {
+    lightIcon.classList.remove('hidden');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    darkIcon.classList.toggle('hidden');
+    lightIcon.classList.toggle('hidden');
+
+    localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+  });
 </script>
 
 
+
 <!-- Carrusel -->
-<section class="my-10">
+<section class="my-0">
   <div class="relative swiper-container">
     <!-- Carrusel Imágenes -->
     <div class="swiper-wrapper">
@@ -175,31 +215,48 @@
 </style>
 
 
-  <!-- Noticias -->
-  <section id="noticias" class="container mx-auto my-10">
-    <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--primary-lila)">Últimas Noticias</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div
-        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-purple-500 transition-transform transform hover:scale-105">
-        <h3 class="text-xl font-bold mb-3 text-purple-700">Hackathon Santa Cruz</h3>
-        <p class="text-gray-700 mb-4">Participa en el evento más grande de tecnología en la ciudad. ¡Regístrate ahora!
-        </p>
-        <a href="#" class="text-purple-600 hover:underline">Leer más...</a>
-      </div>
-      <div
-        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-pink-500 transition-transform transform hover:scale-105">
-        <h3 class="text-xl font-bold mb-3 text-pink-700">Nuevas Herramientas</h3>
-        <p class="text-gray-700 mb-4">Explora los últimos recursos para desarrolladores en nuestra comunidad.</p>
-        <a href="#" class="text-pink-600 hover:underline">Leer más...</a>
-      </div>
-      <div
-        class="bg-white shadow-lg rounded-lg p-5 border-l-4 border-green-500 transition-transform transform hover:scale-105">
-        <h3 class="text-xl font-bold mb-3 text-green-700">Convocatoria de Cursos</h3>
-        <p class="text-gray-700 mb-4">Inscríbete en los cursos de programación para todos los niveles.</p>
-        <a href="#" class="text-green-600 hover:underline">Leer más...</a>
-      </div>
+<!-- Noticias -->
+<section id="noticias" class="container mx-auto my-10 px-4">
+  <h2 class="text-3xl font-bold text-center mb-6 text-purple-600 dark:text-purple-300">Últimas Noticias</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Noticia 1 -->
+    <div
+      class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-5 border-l-4 border-purple-500 transition-transform transform hover:scale-105">
+      <h3 class="text-xl font-bold mb-3 text-purple-700 dark:text-purple-300 flex items-center">
+        <i class="bx bx-code-block text-2xl mr-2"></i> Hackathon Santa Cruz
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Participa en el evento más grande de tecnología en la ciudad.
+        ¡Regístrate ahora!</p>
+      <a href="#" class="text-purple-600 dark:text-purple-400 hover:underline">Leer más...</a>
     </div>
-  </section>
+
+    <!-- Noticia 2 -->
+    <div
+      class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-5 border-l-4 border-pink-500 transition-transform transform hover:scale-105">
+      <h3 class="text-xl font-bold mb-3 text-pink-700 dark:text-pink-300 flex items-center">
+        <i class="bx bx-wrench text-2xl mr-2"></i> Nuevas Herramientas
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Explora los últimos recursos para desarrolladores en nuestra
+        comunidad.</p>
+      <a href="#" class="text-pink-600 dark:text-pink-400 hover:underline">Leer más...</a>
+    </div>
+
+    <!-- Noticia 3 -->
+    <div
+      class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-5 border-l-4 border-green-500 transition-transform transform hover:scale-105">
+      <h3 class="text-xl font-bold mb-3 text-green-700 dark:text-green-300 flex items-center">
+        <i class="bx bx-book text-2xl mr-2"></i> Convocatoria de Cursos
+      </h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Inscríbete en los cursos de programación para todos los niveles.
+      </p>
+      <a href="#" class="text-green-600 dark:text-green-400 hover:underline">Leer más...</a>
+    </div>
+  </div>
+</section>
+
+
+
 
     <!-- Proyectos -->
 <!-- Proyectos -->
@@ -224,26 +281,6 @@
   </div>
 </section>
 
-<!-- Estilos -->
-<style>
-  .proyecto-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .proyecto-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .social-icons a {
-    transition: transform 0.3s, color 0.3s;
-  }
-
-  .social-icons a:hover {
-    transform: scale(1.2);
-    color: var(--primary-pink);
-  }
-</style>
 
 <!-- Script -->
 <script>
@@ -342,14 +379,11 @@
 
 
   <!-- Profesores -->
-<!-- Profesores -->
 <section id="profesores" class="container mx-auto my-10 px-4">
   <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-green)">Nuestros Profesores</h2>
 
   <!-- Contenedor Profesores -->
-  <div id="profesor-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Tarjetas Profesores (Cargar dinámicamente con JavaScript) -->
-  </div>
+  <div id="profesor-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 
   <!-- Paginación -->
   <div class="flex justify-center items-center mt-6 space-x-4">
@@ -363,27 +397,6 @@
     </button>
   </div>
 </section>
-
-<!-- Estilos -->
-<style>
-  .prof-card {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .prof-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .social-icons a {
-    transition: transform 0.3s, color 0.3s;
-  }
-
-  .social-icons a:hover {
-    transform: scale(1.2);
-    color: var(--primary-green);
-  }
-</style>
 
 <!-- Script -->
 <script>
@@ -470,12 +483,12 @@
 
     visibleProfesores.forEach((profesor) => {
       const profCard = document.createElement('div');
-      profCard.className = 'prof-card bg-white shadow-lg rounded-lg p-5 text-center';
+      profCard.className = 'bg-white shadow-lg rounded-lg p-6 text-center transform transition hover:scale-105';
       profCard.innerHTML = `
-        <img src="${profesor.img}" alt="${profesor.nombre}" class="mx-auto rounded-full mb-4">
-        <h3 class="text-xl font-bold mb-2">${profesor.nombre}</h3>
-        <p class="text-gray-700">${profesor.especialidad}</p>
-        <div class="social-icons flex justify-center space-x-4 mt-3 text-2xl text-gray-500">
+        <img src="${profesor.img}" alt="${profesor.nombre}" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-200">
+        <h3 class="text-xl font-bold text-gray-800">${profesor.nombre}</h3>
+        <p class="text-gray-600">${profesor.especialidad}</p>
+        <div class="flex justify-center space-x-4 mt-4 text-xl text-gray-500">
           <a href="${profesor.redes.facebook}" target="_blank" class="hover:text-blue-600"><i class="uil uil-facebook"></i></a>
           <a href="${profesor.redes.instagram}" target="_blank" class="hover:text-pink-500"><i class="uil uil-instagram"></i></a>
           <a href="${profesor.redes.twitter}" target="_blank" class="hover:text-blue-400"><i class="uil uil-twitter"></i></a>
@@ -510,41 +523,102 @@
 
 
 <!-- Galerías -->
+<!-- Galería -->
 <section id="galerias" class="container mx-auto my-10 px-4">
-  <h2 class="text-3xl font-bold text-center mb-6" style="color: var(--primary-pink)">Galerías</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <h2 class="text-4xl font-bold text-center mb-8 text-primary">Galería de Publicaciones</h2>
 
-    <!-- Galería de Fotos -->
-    <div id="fotos" class="space-y-6">
-      <h3 class="text-xl font-bold mb-3 text-purple-700">Galería de Fotos</h3>
+  <!-- Categorías -->
+  <div class="flex justify-center gap-4 mb-6">
+    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+      onclick="filterCategory('web')">Desarrollo Web</button>
+    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+      onclick="filterCategory('movil')">Desarrollo Móvil</button>
+    <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition"
+      onclick="filterCategory('ia')">Inteligencia Artificial</button>
+    <button class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+      onclick="filterCategory('negocios')">Inteligencia de Negocios</button>
+  </div>
 
-      <!-- Filtro por Año -->
-      <div class="flex justify-center gap-4 mb-6">
-        <select class="border p-2 rounded-lg" id="selectYear" onchange="filterByYear()">
-          <option value="2023" selected>Fotos de 2023</option>
-          <option value="2022">Fotos de 2022</option>
-        </select>
+  <!-- Contenido de la galería -->
+  <div id="galeria-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <!-- Publicación de ejemplo -->
+    <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
+      <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
+      <img src="asset/img/web1.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
+      <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
+      <div class="flex items-center justify-between text-gray-600 text-sm">
+        <span>👀 1,2k vistas</span>
+        <span>❤️ 300</span>
       </div>
+      <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+    </article>
 
-      <!-- Fotos -->
-      <section id="photosSection" class="space-y-6">
-        <!-- Fotos del 2023 -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="photos2023">
-          <img src="asset/img/IMG_20230819_161752.jpg" alt="Foto 1" class="rounded-lg object-cover w-full h-48 md:h-64">
-          <img src="asset/img/IMG_20231111_162954.jpg" alt="Foto 2" class="rounded-lg object-cover w-full h-48 md:h-64">
-          <img src="asset/img/IMG_20231111_162951.jpg" alt="Foto 3" class="rounded-lg object-cover w-full h-48 md:h-64">
-        </div>
+        <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
+          <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
+          <img src="asset/img/web1.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
+          <div class="flex items-center justify-between text-gray-600 text-sm">
+            <span>👀 1,2k vistas</span>
+            <span>❤️ 300</span>
+          </div>
+          <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+        </article>
 
-        <!-- Fotos del 2022 (ocultas por defecto) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 hidden" id="photos2022">
-          <img src="asset/img/IMG_20221001_175958.jpg" alt="Foto 4" class="rounded-lg object-cover w-full h-48 md:h-64">
-          <img src="asset/img/IMG_20221101_175958.jpg" alt="Foto 5" class="rounded-lg object-cover w-full h-48 md:h-64">
-          <img src="asset/img/IMG_20221102_161752.jpg" alt="Foto 6" class="rounded-lg object-cover w-full h-48 md:h-64">
-        </div>
-      </section>
-    </div>
+            <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
+      <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
+      <img src="asset/img/web1.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
+      <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
+      <div class="flex items-center justify-between text-gray-600 text-sm">
+        <span>👀 1,2k vistas</span>
+        <span>❤️ 300</span>
+      </div>
+      <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+    </article>
+
+
+    <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
+      <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
+      <img src="asset/img/movil1.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
+      <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
+      <div class="flex items-center justify-between text-gray-600 text-sm">
+        <span>👀 800 vistas</span>
+        <span>👍 200</span>
+      </div>
+      <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+    </article>
+
+        <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
+          <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
+          <img src="asset/img/movil1.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
+          <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
+          <div class="flex items-center justify-between text-gray-600 text-sm">
+            <span>👀 800 vistas</span>
+            <span>👍 200</span>
+          </div>
+          <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+        </article>
+
+            <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
+              <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
+              <img src="asset/img/movil1.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
+              <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
+              <div class="flex items-center justify-between text-gray-600 text-sm">
+                <span>👀 800 vistas</span>
+                <span>👍 200</span>
+              </div>
+              <textarea class="w-full p-2 border rounded-lg" placeholder="Escribe un comentario..."></textarea>
+            </article>
   </div>
 </section>
+
+<!-- Script -->
+<script>
+  function filterCategory(category) {
+    document.querySelectorAll('.post').forEach(post => {
+      post.style.display = post.getAttribute('data-category') === category ? 'block' : 'none';
+    });
+  }
+</script>
 
 
 
@@ -575,52 +649,205 @@
   }
 </script>
 
-
 <section class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-10">
-  <!-- Galería de Videos -->
   <div class="container mx-auto px-4 space-y-6">
     <h3 class="text-3xl font-semibold text-center text-green-800 mb-8">Galería de Videos</h3>
 
-    <!-- Contenedor de videos con un grid adaptativo -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div class="video-container bg-white p-4 rounded-lg shadow-lg overflow-hidden">
-        <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
-          controls>
-          <source src="asset/video/video.mp4" type="video/mp4">
-        </video>
-      </div>
+    <!-- Buscador de videos -->
+    <div class="flex justify-center">
+      <input type="text" id="searchInput" placeholder="Buscar videos..."
+        class="px-4 py-2 rounded-lg text-gray-900 w-full max-w-lg border-2 border-white focus:outline-none focus:ring-2 focus:ring-yellow-300">
+    </div>
 
-      <div class="video-container bg-white p-4 rounded-lg shadow-lg overflow-hidden">
-        <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out"
-          controls>
-          <source src="asset/video/video.mp4" type="video/mp4">
-        </video>
-      </div>
+    <!-- Contenedor de videos -->
+    <div id="videoGallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-6"></div>
 
-      <!-- Más videos aquí -->
+    <!-- Paginación -->
+    <div class="flex justify-center space-x-4 mt-6">
+      <button id="prevPage"
+        class="bg-white text-purple-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-200 transition">⬅
+        Anterior</button>
+      <button id="nextPage"
+        class="bg-white text-purple-700 px-4 py-2 rounded-full shadow-md hover:bg-gray-200 transition">Siguiente
+        ➡</button>
     </div>
   </div>
 </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-10">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Contáctanos</h2>
-      <div class="flex justify-center space-x-6">
-        <a href="https://facebook.com" target="_blank" class="text-4xl hover:text-yellow-300"><i
-            class="uil uil-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" class="text-4xl hover:text-yellow-300"><i
-            class="uil uil-instagram"></i></a>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videos = [
+      { title: "Video 1", description: "Introducción a la Programación", date: "2024-06-01", likes: 120, comments: 45, src: "asset/video/video1.mp4" },
+      { title: "Video 2", description: "JavaScript desde Cero", date: "2024-06-05", likes: 90, comments: 30, src: "asset/video/video2.mp4" },
+      { title: "Video 3", description: "CSS Avanzado", date: "2024-06-10", likes: 150, comments: 60, src: "asset/video/video3.mp4" },
+      { title: "Video 4", description: "React Hooks en Profundidad", date: "2024-06-15", likes: 180, comments: 75, src: "asset/video/video4.mp4" },
+      { title: "Video 5", description: "Seguridad en la Web", date: "2024-06-20", likes: 200, comments: 100, src: "asset/video/video5.mp4" },
+      { title: "Video 6", description: "Desarrollo Full Stack", date: "2024-06-25", likes: 170, comments: 55, src: "asset/video/video6.mp4" }
+    ];
+
+    let currentPage = 1;
+    const videosPerPage = 4;
+
+    function renderVideos(filter = "") {
+      const videoGallery = document.getElementById("videoGallery");
+      videoGallery.innerHTML = "";
+
+      const filteredVideos = videos.filter(video =>
+        video.title.toLowerCase().includes(filter.toLowerCase()) ||
+        video.description.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      const start = (currentPage - 1) * videosPerPage;
+      const end = start + videosPerPage;
+      const paginatedVideos = filteredVideos.slice(start, end);
+
+      paginatedVideos.forEach(video => {
+        const videoCard = document.createElement("div");
+        videoCard.className = "bg-white p-4 rounded-lg shadow-lg overflow-hidden";
+        videoCard.innerHTML = `
+          <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out" controls>
+            <source src="${video.src}" type="video/mp4">
+          </video>
+          <div class="mt-3">
+            <h4 class="text-lg font-bold text-gray-900">${video.title}</h4>
+            <p class="text-gray-600 text-sm">${video.description}</p>
+            <p class="text-gray-500 text-xs">📅 ${video.date}</p>
+            <div class="flex justify-between text-gray-700 text-sm mt-2">
+              <span>👍 ${video.likes}</span>
+              <span>💬 ${video.comments}</span>
+            </div>
+          </div>
+        `;
+        videoGallery.appendChild(videoCard);
+      });
+
+      // Control de botones de paginación
+      document.getElementById("prevPage").disabled = currentPage === 1;
+      document.getElementById("nextPage").disabled = end >= filteredVideos.length;
+    }
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+      currentPage++;
+      renderVideos(document.getElementById("searchInput").value);
+    });
+
+    document.getElementById("prevPage").addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        renderVideos(document.getElementById("searchInput").value);
+      }
+    });
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      currentPage = 1;
+      renderVideos(e.target.value);
+    });
+
+    renderVideos();
+  });
+</script>
+
+
+<!-- Contacto  -->
+<section id="contacto" class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-16">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-8">Contáctanos</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-10 items-center">
+      <!-- Formulario de Contacto -->
+      <div class="bg-white text-gray-900 p-6 rounded-lg shadow-lg">
+        <h3 class="text-2xl font-semibold mb-4 text-center">Envíanos un mensaje</h3>
+        <form action="#" method="POST">
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium">Nombre</label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="block text-sm font-medium">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-pink-500 text-white font-semibold py-2 rounded-lg hover:bg-pink-600 transition">
+            Enviar Mensaje
+          </button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-purple-700 text-white py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 Chicas Programadoras</p>
+
+
+<!-- Footer  -->
+<footer class="bg-purple-700 text-white py-8 relative">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+
+      <!-- Sección de Enlaces -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#" class="hover:underline">Inicio</a></li>
+          <li><a href="#" class="hover:underline">Servicios</a></li>
+          <li><a href="#" class="hover:underline">Contacto</a></li>
+          <li><a href="#" class="hover:underline">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Sección de Políticas -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Políticas</h3>
+        <ul>
+          <li><a href="#" class="hover:underline">Términos y Condiciones</a></li>
+          <li><a href="#" class="hover:underline">Política de Privacidad</a></li>
+          <li><a href="#" class="hover:underline">Política de Cookies</a></li>
+          <li><a href="#" class="hover:underline">Reglas de la Comunidad</a></li>
+        </ul>
+      </div>
+
+      <!-- Sección de Contacto -->
+      <div>
+        <h3 class="text-lg font-semibold mb-2">Contacto</h3>
+        <p>Email: contacto@chicasprogramadoras.com</p>
+        <p>Tel: +123 456 789</p>
+        <div class="flex justify-center md:justify-start mt-4 space-x-4">
+          <a href="#" class="hover:text-gray-300"><i class="bx bxl-facebook text-xl"></i></a>
+          <a href="#" class="hover:text-gray-300"><i class="bx bxl-twitter text-xl"></i></a>
+          <a href="#" class="hover:text-gray-300"><i class="bx bxl-instagram text-xl"></i></a>
+        </div>
+      </div>
     </div>
-  </footer>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-white mt-6 pt-4 text-center">
+      <p>&copy; 2025 Chicas Programadoras. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botón Flotante para Subir -->
+<button onclick="scrollToTop()"
+  class="fixed bottom-6 right-6 bg-white text-purple-700 p-4 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
+  ↑
+</button>
+
+<!-- Script para Subir -->
+<script>
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
 
 </body>
 
