@@ -1,0 +1,34 @@
+{
+  "profesores": [
+    {
+      "nombre": "Luishiño Pericena",
+      "especialidad": "Desarrollo Web",
+      "img": "asset/img/mentor/Luishiño.png",
+      "redes": {
+        "facebook": "https://facebook.com/luishino",
+        "instagram": "https://instagram.com/luishino",
+        "twitter": "https://twitter.com/luishino"
+      }
+    },
+    {
+      "nombre": "María García",
+      "especialidad": "Inteligencia Artificial",
+      "img": "asset/img/mentor/Maria.png",
+      "redes": {
+        "facebook": "https://facebook.com/maria",
+        "instagram": "https://instagram.com/maria",
+        "twitter": "https://twitter.com/maria"
+      }
+    },
+    {
+      "nombre": "Carlos López",
+      "especialidad": "Seguridad Informática",
+      "img": "asset/img/mentor/Carlos.png",
+      "redes": {
+        "facebook": "https://facebook.com/carlos",
+        "instagram": "https://instagram.com/carlos",
+        "twitter": "https://twitter.com/carlos"
+      }
+    }
+  ]
+}

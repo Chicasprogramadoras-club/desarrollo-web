@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Video 1",
+    "description": "Introducción a la Programación",
+    "date": "2024-06-01",
+    "likes": 120,
+    "comments": 45,
+    "src": "asset/video/video.mp4"
+  },
+  {
+    "title": "Video 2",
+    "description": "JavaScript desde Cero",
+    "date": "2024-06-05",
+    "likes": 90,
+    "comments": 30,
+    "src": "asset/video/video.mp4"
+  },
+  {
+    "title": "Video 3",
+    "description": "CSS Avanzado",
+    "date": "2024-06-10",
+    "likes": 150,
+    "comments": 60,
+    "src": "asset/video/video.mp4"
+  },
+  {
+    "title": "Video 4",
+    "description": "React Hooks en Profundidad",
+    "date": "2024-06-15",
+    "likes": 180,
+    "comments": 75,
+    "src": "asset/video/video.mp4"
+  }
+]

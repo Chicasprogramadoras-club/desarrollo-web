@@ -1,0 +1,34 @@
+[
+  {
+    "titulo": "Ganadores del Concurso de Innovación",
+    "descripcion": "Descubre los proyectos más innovadores de este año.",
+    "vistas": "2.3K",
+    "reacciones": "❤️ 320",
+    "imagen": "asset/img/portada1200x400.jpg",
+    "verMas": "#"
+  },
+  {
+    "titulo": "Ganadores del Hackathon 2024",
+    "descripcion": "Conoce a los campeones del reto tecnológico.",
+    "vistas": "1.8K",
+    "reacciones": "🔥 410",
+    "imagen": "asset/img/portada1200x400.jpg",
+    "verMas": "#"
+  },
+  {
+    "titulo": "Proyectos de Inteligencia Artificial",
+    "descripcion": "Los últimos avances en IA de nuestros estudiantes.",
+    "vistas": "3.5K",
+    "reacciones": "🚀 620",
+    "imagen": "asset/img/portada1200x400.jpg",
+    "verMas": "#"
+  },
+  {
+    "titulo": "Proyectos de Inteligencia Artificial",
+    "descripcion": "Los últimos avances en IA de nuestros estudiantes.",
+    "vistas": "3.5K",
+    "reacciones": "🚀 620",
+    "imagen": "asset/img/portada1200x400.jpg",
+    "verMas": "#"
+  }
+]

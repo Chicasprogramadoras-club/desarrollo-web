@@ -4,22 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
   <title>Chicas Programadoras - Santa Cruz</title>
+  <meta name="description"
+    content="Comunidad de Chicas Programadoras en Santa Cruz, promoviendo el aprendizaje y crecimiento en tecnología.">
+  <meta name="author" content="Chicas Programadoras">
+  <meta name="keywords"
+    content="programación, tecnología, mujeres en tecnología, Santa Cruz, comunidad, desarrollo web">
+
+  <!-- Open Graph (Para compartir en redes sociales) -->
+  <meta property="og:title" content="Chicas Programadoras - Santa Cruz">
+  <meta property="og:description"
+    content="Únete a la comunidad de mujeres apasionadas por la tecnología y la programación en Santa Cruz.">
+  <meta property="og:image" content="https://tudominio.com/assets/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tudominio.com/">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chicas Programadoras - Santa Cruz">
+  <meta name="twitter:description" content="Comunidad de mujeres en tecnología en Santa Cruz.">
+  <meta name="twitter:image" content="https://tudominio.com/assets/images/twitter-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://tudominio.com/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="https://tudominio.com/assets/icons/apple-touch-icon.png">
+
+  <!-- Tailwind CSS (Personalizado) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-  <style>
-    :root {
-      --primary-lila: #a78bfa;
-      --primary-pink: #f9a8d4;
-      --primary-green: #34d399;
-      --text-dark: #1f2937;
-      --text-light: #ffffff;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4F46E5', // Personalizado
+            secondary: '#9333EA'
+          }
+        }
+      }
     }
-  </style>
+  </script>
+
+  <!-- Estilos y Librerías -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+  <link rel="stylesheet" href="asset/style/root.css">
+
+  <!-- Scripts externos (con carga optimizada) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
 </head>
+
 
 <body class="bg-gradient-to-br from-purple-100 via-pink-100 to-green-100 text-gray-800">
 
@@ -81,53 +118,12 @@
         class="py-3 px-4 w-full text-center rounded-lg border border-white hover:bg-white hover:text-purple-700 transition duration-300">Registro</a>
     </nav>
   </div>
-
   <!-- Botón de modo oscuro -->
   <button id="theme-toggle" class="absolute top-4 right-16 text-white text-2xl focus:outline-none">
     <i id="theme-toggle-dark-icon" class="bx bx-moon hidden"></i>
     <i id="theme-toggle-light-icon" class="bx bx-sun hidden"></i>
   </button>
 </header>
-
-<script>
-  // Menú móvil
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const closeMenu = document.getElementById('close-menu');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('translate-x-full');
-  });
-
-  closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.add('translate-x-full');
-    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-  });
-
-  // Modo oscuro
-  const themeToggle = document.getElementById('theme-toggle');
-  const darkIcon = document.getElementById('theme-toggle-dark-icon');
-  const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-  if (
-    localStorage.getItem('color-theme') === 'dark' ||
-    (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
-    document.documentElement.classList.add('dark');
-    darkIcon.classList.remove('hidden');
-  } else {
-    lightIcon.classList.remove('hidden');
-  }
-
-  themeToggle.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark');
-    darkIcon.classList.toggle('hidden');
-    lightIcon.classList.toggle('hidden');
-
-    localStorage.setItem('color-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-  });
-</script>
 
 
 
@@ -184,35 +180,6 @@
   });
 </script>
 
-<!-- Estilos personalizados -->
-<style>
-  .swiper-container {
-    position: relative;
-    width: 100%;
-    max-height: 400px;
-  }
-
-  .swiper-slide img {
-    filter: brightness(50%);
-    /* Oscurece las imágenes para destacar el contenido estático */
-  }
-
-  .swiper-slide img:hover {
-    filter: brightness(70%);
-  }
-
-  @media (max-width: 768px) {
-    .swiper-slide img {
-      height: 300px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .swiper-slide img {
-      height: 200px;
-    }
-  }
-</style>
 
 
 <!-- Noticias -->
@@ -255,62 +222,22 @@
   </div>
 </section>
 
-
-<!-- Sección de Publicaciones -->
+<!-- Publicaciones -->
 <section id="publicaciones" class="container mx-auto my-12 px-4">
   <h2 class="text-4xl font-bold text-center mb-8 text-primary dark:text-white">Publicaciones Destacadas</h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <!-- Publicación 1 -->
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-      <img src="asset/img/portada1200x400.jpg" alt="Concurso Innovación" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold dark:text-white">Ganadores del Concurso de Innovación</h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Descubre los proyectos más innovadores de este año.</p>
-      <div class="flex justify-between text-gray-500 dark:text-gray-400 text-sm">
-        <span>👀 2.3K vistas</span>
-        <span>❤️ 320 reacciones</span>
-      </div>
-      <a href="#" class="mt-4 inline-block text-primary dark:text-blue-400 font-bold">Ver más →</a>
-    </div>
-
-    <!-- Publicación 2 -->
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-      <img src="asset/img/portada1200x400.jpg" alt="Ganadores Hackathon" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold dark:text-white">Ganadores del Hackathon 2024</h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Conoce a los campeones del reto tecnológico.</p>
-      <div class="flex justify-between text-gray-500 dark:text-gray-400 text-sm">
-        <span>👀 1.8K vistas</span>
-        <span>🔥 410 reacciones</span>
-      </div>
-      <a href="#" class="mt-4 inline-block text-primary dark:text-blue-400 font-bold">Ver más →</a>
-    </div>
-
-    <!-- Publicación 3 -->
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6">
-      <img src="asset/img/portada1200x400.jpg" alt="Proyectos IA" class="rounded-lg mb-4">
-      <h3 class="text-xl font-semibold dark:text-white">Proyectos de Inteligencia Artificial</h3>
-      <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Los últimos avances en IA de nuestros estudiantes.</p>
-      <div class="flex justify-between text-gray-500 dark:text-gray-400 text-sm">
-        <span>👀 3.5K vistas</span>
-        <span>🚀 620 reacciones</span>
-      </div>
-      <a href="#" class="mt-4 inline-block text-primary dark:text-blue-400 font-bold">Ver más →</a>
-    </div>
-
+  <div id="publicaciones-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Aquí se insertarán dinámicamente las publicaciones -->
   </div>
 </section>
 
-
-
-    <!-- Proyectos -->
-<!-- Proyectos -->
 <section id="proyectos" class="container mx-auto my-10 px-4">
-  <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-pink)">Proyectos Destacados</h2>
+  <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-pink)">
+    Proyectos Destacados
+  </h2>
 
   <!-- Contenedor Proyectos -->
   <div id="proyecto-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Tarjetas Proyectos (Cargar dinámicamente con JavaScript) -->
+    <!-- Los proyectos se cargarán aquí dinámicamente -->
   </div>
 
   <!-- Paginación -->
@@ -326,109 +253,12 @@
   </div>
 </section>
 
-
-<!-- Script -->
-<script>
-  // Lista de proyectos (Datos de ejemplo)
-  const proyectos = [
-    {
-      titulo: 'cu-project',
-      autora: 'Camila',
-      descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-      img: 'asset/img/IMG_20221001_175958.jpg',
-      redes: {
-        github: 'https://github.com/camila/cu-project',
-        demo: 'https://demo.cuproject.com',
-      },
-    },
-    {
-      titulo: 'ia-assistant',
-      autora: 'Carlos López',
-      descripcion: 'Un asistente basado en inteligencia artificial para mejorar la productividad.',
-      img: 'asset/img/proyecto2.jpg',
-      redes: {
-        github: 'https://github.com/carlos/ia-assistant',
-        demo: 'https://demo.ia-assistant.com',
-      },
-    },
-    {
-      titulo: 'seguro-max',
-      autora: 'Luishiño Pericena',
-      descripcion: 'Un sistema seguro para gestionar información confidencial.',
-      img: 'asset/img/proyecto3.jpg',
-      redes: {
-        github: 'https://github.com/luishino/seguro-max',
-        demo: 'https://demo.seguro-max.com',
-      },
-    },
-    // Añadir más proyectos...
-  ];
-
-  // Estado de paginación
-  const proyectosPerPage = 3;
-  let currentProyectoPage = 1;
-
-  // Referencias a los elementos
-  const proyectoContainer = document.getElementById('proyecto-container');
-  const prevProyectoBtn = document.getElementById('prev-proyecto-btn');
-  const nextProyectoBtn = document.getElementById('next-proyecto-btn');
-
-  // Renderizar Proyectos
-  function renderProyectos() {
-    proyectoContainer.innerHTML = '';
-    const startIndex = (currentProyectoPage - 1) * proyectosPerPage;
-    const endIndex = startIndex + proyectosPerPage;
-    const visibleProyectos = proyectos.slice(startIndex, endIndex);
-
-    visibleProyectos.forEach((proyecto) => {
-      const proyectoCard = document.createElement('div');
-      proyectoCard.className = 'proyecto-card bg-white shadow-md rounded-lg overflow-hidden border border-pink-300';
-      proyectoCard.innerHTML = `
-        <img src="${proyecto.img}" alt="${proyecto.titulo}" class="w-full h-40 object-cover">
-        <div class="p-5">
-          <h2 class="text-xl font-bold text-green-600 mb-2"><a href="#">${proyecto.titulo}</a></h2>
-          <p class="text-sm text-gray-600 mb-2">Autora: ${proyecto.autora}</p>
-          <p class="text-gray-700 mb-3">${proyecto.descripcion}</p>
-          <div class="social-icons flex justify-center space-x-4 text-2xl text-gray-500">
-            <a href="${proyecto.redes.github}" target="_blank" class="hover:text-gray-800"><i class="uil uil-github"></i></a>
-            <a href="${proyecto.redes.demo}" target="_blank" class="hover:text-blue-500"><i class="uil uil-external-link-alt"></i></a>
-          </div>
-        </div>
-      `;
-      proyectoContainer.appendChild(proyectoCard);
-    });
-
-    // Actualizar estado de los botones
-    prevProyectoBtn.disabled = currentProyectoPage === 1;
-    nextProyectoBtn.disabled = endIndex >= proyectos.length;
-  }
-
-  // Manejar eventos de paginación
-  prevProyectoBtn.addEventListener('click', () => {
-    if (currentProyectoPage > 1) {
-      currentProyectoPage--;
-      renderProyectos();
-    }
-  });
-
-  nextProyectoBtn.addEventListener('click', () => {
-    if (currentProyectoPage * proyectosPerPage < proyectos.length) {
-      currentProyectoPage++;
-      renderProyectos();
-    }
-  });
-
-  // Inicializar
-  renderProyectos();
-</script>
-
-
-  <!-- Profesores -->
+<!-- Profesores -->
 <section id="profesores" class="container mx-auto my-10 px-4">
   <h2 class="text-3xl font-bold text-center mb-8" style="color: var(--primary-green)">Nuestros Profesores</h2>
 
   <!-- Contenedor Profesores -->
-  <div id="profesor-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  <div id="profesor-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
   <!-- Paginación -->
   <div class="flex justify-center items-center mt-6 space-x-4">
@@ -443,131 +273,10 @@
   </div>
 </section>
 
-<!-- Script -->
-<script>
-  // Lista de profesores (Datos de ejemplo)
-  const profesores = [
-    {
-      nombre: 'Luishiño Pericena',
-      especialidad: 'Desarrollo Web',
-      img: 'asset/img/mentor/Luishiño.png',
-      redes: {
-        facebook: 'https://facebook.com/luishino',
-        instagram: 'https://instagram.com/luishino',
-        twitter: 'https://twitter.com/luishino',
-      },
-    },
-    {
-      nombre: 'María García',
-      especialidad: 'Inteligencia Artificial',
-      img: 'asset/img/mentor/Maria.png',
-      redes: {
-        facebook: 'https://facebook.com/maria',
-        instagram: 'https://instagram.com/maria',
-        twitter: 'https://twitter.com/maria',
-      },
-    },
-    {
-      nombre: 'Carlos López',
-      especialidad: 'Seguridad Informática',
-      img: 'asset/img/mentor/Carlos.png',
-      redes: {
-        facebook: 'https://facebook.com/carlos',
-        instagram: 'https://instagram.com/carlos',
-        twitter: 'https://twitter.com/carlos',
-      },
-    },
-    // Añadir más profesores...
-        {
-      nombre: 'Carlos López',
-      especialidad: 'Seguridad Informática',
-      img: 'asset/img/mentor/Carlos.png',
-      redes: {
-        facebook: 'https://facebook.com/carlos',
-        instagram: 'https://instagram.com/carlos',
-        twitter: 'https://twitter.com/carlos',
-      },
-    },
-        {
-      nombre: 'Carlos López',
-      especialidad: 'Seguridad Informática',
-      img: 'asset/img/mentor/Carlos.png',
-      redes: {
-        facebook: 'https://facebook.com/carlos',
-        instagram: 'https://instagram.com/carlos',
-        twitter: 'https://twitter.com/carlos',
-      },
-    },
-        {
-      nombre: 'Carlos López',
-      especialidad: 'Seguridad Informática',
-      img: 'asset/img/mentor/Carlos.png',
-      redes: {
-        facebook: 'https://facebook.com/carlos',
-        instagram: 'https://instagram.com/carlos',
-        twitter: 'https://twitter.com/carlos',
-      },
-    },
-  ];
-
-  // Estado de paginación
-  const itemsPerPage = 3;
-  let currentPage = 1;
-
-  // Referencias a los elementos
-  const profesorContainer = document.getElementById('profesor-container');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-
-  // Renderizar Profesores
-  function renderProfesores() {
-    profesorContainer.innerHTML = '';
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const visibleProfesores = profesores.slice(startIndex, endIndex);
-
-    visibleProfesores.forEach((profesor) => {
-      const profCard = document.createElement('div');
-      profCard.className = 'bg-white shadow-lg rounded-lg p-6 text-center transform transition hover:scale-105';
-      profCard.innerHTML = `
-        <img src="${profesor.img}" alt="${profesor.nombre}" class="w-32 h-32 mx-auto rounded-full mb-4 border-4 border-gray-200">
-        <h3 class="text-xl font-bold text-gray-800">${profesor.nombre}</h3>
-        <p class="text-gray-600">${profesor.especialidad}</p>
-        <div class="flex justify-center space-x-4 mt-4 text-xl text-gray-500">
-          <a href="${profesor.redes.facebook}" target="_blank" class="hover:text-blue-600"><i class="uil uil-facebook"></i></a>
-          <a href="${profesor.redes.instagram}" target="_blank" class="hover:text-pink-500"><i class="uil uil-instagram"></i></a>
-          <a href="${profesor.redes.twitter}" target="_blank" class="hover:text-blue-400"><i class="uil uil-twitter"></i></a>
-        </div>
-      `;
-      profesorContainer.appendChild(profCard);
-    });
-
-    // Actualizar estado de los botones
-    prevBtn.disabled = currentPage === 1;
-    nextBtn.disabled = endIndex >= profesores.length;
-  }
-
-  // Manejar eventos de paginación
-  prevBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderProfesores();
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    if (currentPage * itemsPerPage < profesores.length) {
-      currentPage++;
-      renderProfesores();
-    }
-  });
-
-  // Inicializar
-  renderProfesores();
-</script>
 
 
-<!-- Galerías mejoradas estilo Pinterest -->
+
+<!-- Galerías -->
 <section id="galerias" class="container mx-auto my-10 px-4">
   <h2 class="text-4xl font-bold text-center mb-8 text-primary">Galería de Publicaciones</h2>
 
@@ -648,6 +357,7 @@
   }
 </script>
 
+    <!-- Videos -->
 <section class="bg-gradient-to-r from-pink-500 to-green-400 text-white py-10">
   <div class="container mx-auto px-4 space-y-6">
     <h3 class="text-3xl font-semibold text-center text-green-800 mb-8">Galería de Videos</h3>
@@ -673,78 +383,7 @@
   </div>
 </section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const videos = [
-      { title: "Video 1", description: "Introducción a la Programación", date: "2024-06-01", likes: 120, comments: 45, src: "asset/video/video1.mp4" },
-      { title: "Video 2", description: "JavaScript desde Cero", date: "2024-06-05", likes: 90, comments: 30, src: "asset/video/video2.mp4" },
-      { title: "Video 3", description: "CSS Avanzado", date: "2024-06-10", likes: 150, comments: 60, src: "asset/video/video3.mp4" },
-      { title: "Video 4", description: "React Hooks en Profundidad", date: "2024-06-15", likes: 180, comments: 75, src: "asset/video/video4.mp4" },
-      { title: "Video 5", description: "Seguridad en la Web", date: "2024-06-20", likes: 200, comments: 100, src: "asset/video/video5.mp4" },
-      { title: "Video 6", description: "Desarrollo Full Stack", date: "2024-06-25", likes: 170, comments: 55, src: "asset/video/video6.mp4" }
-    ];
 
-    let currentPage = 1;
-    const videosPerPage = 4;
-
-    function renderVideos(filter = "") {
-      const videoGallery = document.getElementById("videoGallery");
-      videoGallery.innerHTML = "";
-
-      const filteredVideos = videos.filter(video =>
-        video.title.toLowerCase().includes(filter.toLowerCase()) ||
-        video.description.toLowerCase().includes(filter.toLowerCase())
-      );
-
-      const start = (currentPage - 1) * videosPerPage;
-      const end = start + videosPerPage;
-      const paginatedVideos = filteredVideos.slice(start, end);
-
-      paginatedVideos.forEach(video => {
-        const videoCard = document.createElement("div");
-        videoCard.className = "bg-white p-4 rounded-lg shadow-lg overflow-hidden";
-        videoCard.innerHTML = `
-          <video class="w-full h-auto rounded-lg shadow-lg hover:scale-105 transform transition duration-300 ease-in-out" controls>
-            <source src="${video.src}" type="video/mp4">
-          </video>
-          <div class="mt-3">
-            <h4 class="text-lg font-bold text-gray-900">${video.title}</h4>
-            <p class="text-gray-600 text-sm">${video.description}</p>
-            <p class="text-gray-500 text-xs">📅 ${video.date}</p>
-            <div class="flex justify-between text-gray-700 text-sm mt-2">
-              <span>👍 ${video.likes}</span>
-              <span>💬 ${video.comments}</span>
-            </div>
-          </div>
-        `;
-        videoGallery.appendChild(videoCard);
-      });
-
-      // Control de botones de paginación
-      document.getElementById("prevPage").disabled = currentPage === 1;
-      document.getElementById("nextPage").disabled = end >= filteredVideos.length;
-    }
-
-    document.getElementById("nextPage").addEventListener("click", () => {
-      currentPage++;
-      renderVideos(document.getElementById("searchInput").value);
-    });
-
-    document.getElementById("prevPage").addEventListener("click", () => {
-      if (currentPage > 1) {
-        currentPage--;
-        renderVideos(document.getElementById("searchInput").value);
-      }
-    });
-
-    document.getElementById("searchInput").addEventListener("input", (e) => {
-      currentPage = 1;
-      renderVideos(e.target.value);
-    });
-
-    renderVideos();
-  });
-</script>
 
 
 <!-- Sección de Reseñas -->
@@ -871,72 +510,77 @@
   </div>
 </section>
 
-<!-- Sección de Sponsors -->
 <section id="sponsors" class="container mx-auto my-12 px-4">
-  <h2 class="text-4xl font-bold text-center mb-8 text-primary dark:text-white">Nuestros Sponsors</h2>
+  <h2 class="text-4xl font-bold text-center mb-8 text-primary dark:text-white">
+    Nuestros Sponsors
+  </h2>
 
   <!-- Carrusel -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-
-      <!-- Sponsor 1 -->
-      <div class="swiper-slide flex justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
-          <img src="asset/img/sponsor1.png" alt="Sponsor 1" class="h-16 object-contain">
-        </div>
-      </div>
-
-      <!-- Sponsor 2 -->
-      <div class="swiper-slide flex justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
-          <img src="asset/img/sponsor2.png" alt="Sponsor 2" class="h-16 object-contain">
-        </div>
-      </div>
-
-      <!-- Sponsor 3 -->
-      <div class="swiper-slide flex justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
-          <img src="asset/img/sponsor3.png" alt="Sponsor 3" class="h-16 object-contain">
-        </div>
-      </div>
-
-      <!-- Sponsor 4 -->
-      <div class="swiper-slide flex justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
-          <img src="asset/img/sponsor4.png" alt="Sponsor 4" class="h-16 object-contain">
-        </div>
-      </div>
-
-      <!-- Sponsor 5 -->
-      <div class="swiper-slide flex justify-center">
-        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
-          <img src="asset/img/sponsor5.png" alt="Sponsor 5" class="h-16 object-contain">
-        </div>
-      </div>
-
+  <div class="relative">
+    <div class="swiper-container overflow-hidden w-full">
+      <div class="swiper-wrapper"></div>
+      <!-- Paginación -->
+      <div class="swiper-pagination absolute bottom-0 left-0 right-0 flex justify-center"></div>
     </div>
-
-    <!-- Paginación -->
-    <div class="swiper-pagination"></div>
   </div>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async function () {
+    const swiperWrapper = document.querySelector(".swiper-wrapper");
+
+    async function fetchSponsors() {
+      try {
+        const response = await fetch("/asset/data/sponsors.json");
+        if (!response.ok) throw new Error("Error al cargar los sponsors.");
+        const sponsors = await response.json();
+        console.log("Sponsors cargados:", sponsors); // Debug
+
+        renderSponsors(sponsors);
+      } catch (error) {
+        console.error("Error:", error);
+        swiperWrapper.innerHTML = `<p class="text-red-500 text-center">No se pudieron cargar los sponsors.</p>`;
+      }
+    }
+
+    function renderSponsors(sponsors) {
+      swiperWrapper.innerHTML = ""; // Limpiar contenido previo
+
+      sponsors.forEach(sponsor => {
+        console.log("Renderizando sponsor:", sponsor); // Debug
+
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide flex justify-center";
+        slide.innerHTML = `
+          <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center w-40 h-24">
+            <img src="${sponsor.image}" alt="${sponsor.name}" class="h-16 object-contain">
+          </div>
+        `;
+        swiperWrapper.appendChild(slide);
+      });
+
+      // Inicializar Swiper después de renderizar los slides
+      setTimeout(() => {
+        new Swiper('.swiper-container', {
+          loop: true,
+          autoplay: { delay: 2500 },
+          slidesPerView: 1,
+          breakpoints: {
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+          },
+          pagination: { el: '.swiper-pagination', clickable: true }
+        });
+      }, 100); // Esperar un poco para asegurar que los elementos existan
+    }
+
+    fetchSponsors();
+  });
+</script>
 
 <!-- Swiper.js -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  new Swiper('.swiper-container', {
-    loop: true,
-    autoplay: { delay: 2500 },
-    slidesPerView: 1,
-    breakpoints: {
-      640: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    },
-    pagination: { el: '.swiper-pagination', clickable: true }
-  });
-</script>
-
 
 
 <!-- Footer  -->
@@ -985,25 +629,20 @@
     </div>
   </div>
 
-
   <!-- Botón Flotante para Subir -->
 <button onclick="scrollToTop()"
   class="fixed bottom-6 right-6 bg-white text-purple-700 p-4 rounded-full shadow-lg hover:bg-gray-200 transition duration-300">
   ↑
 </button>
 
-<!-- Script para Subir -->
-<script>
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
 
 </footer>
-
-
-
-
+  <script src="asset/js/mobile-menu.js"></script>
+  <script src="asset/js/smooth.js"></script>
+  <script src="asset/js/publication.js"></script>
+  <script src="asset/js/project.js"></script>
+  <script src="asset/js/teachers.js"></script>
+  <script src="asset/js/video.js"></script>
 </body>
 
 </html>

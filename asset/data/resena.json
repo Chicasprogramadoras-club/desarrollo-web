@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Carlos Mendoza",
+    "profession": "Desarrollo Web",
+    "review": "Astro ha sido increíble para sitios rápidos y dinámicos.",
+    "image": "asset/img/user1.jpg"
+  },
+  {
+    "name": "María López",
+    "profession": "Desarrollo Móvil",
+    "review": "Flutter es genial para apps móviles.",
+    "image": "asset/img/user2.jpg"
+  },
+  {
+    "name": "Juan Pérez",
+    "profession": "Inteligencia Artificial",
+    "review": "Aprender IA me ha abierto muchas oportunidades.",
+    "image": "asset/img/user3.jpg"
+  },
+  {
+    "name": "Ana Silva",
+    "profession": "Inteligencia de Negocios",
+    "review": "El análisis de datos es clave para negocios.",
+    "image": "asset/img/user4.jpg"
+  },
+  {
+    "name": "Roberto Castillo",
+    "profession": "Ciberseguridad",
+    "review": "Ciberseguridad me ha ayudado a proteger sistemas.",
+    "image": "asset/img/user5.jpg"
+  }
+]

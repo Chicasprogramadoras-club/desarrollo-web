@@ -1,0 +1,37 @@
+
+    :root {
+      --primary-lila: #a78bfa;
+      --primary-pink: #f9a8d4;
+      --primary-green: #34d399;
+      --text-dark: #1f2937;
+      --text-light: #ffffff;
+    }
+
+
+     /* Oscurece las imágenes para destacar el contenido estático */
+      .swiper-container {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .swiper-slide img {
+    filter: brightness(50%);
+
+  }
+
+  .swiper-slide img:hover {
+    filter: brightness(70%);
+  }
+
+  @media (max-width: 768px) {
+    .swiper-slide img {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .swiper-slide img {
+      height: 200px;
+    }
+  }
