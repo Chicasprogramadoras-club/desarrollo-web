@@ -567,96 +567,50 @@
 </script>
 
 
-<!-- Galerías -->
-<!-- Galería -->
+<!-- Galerías mejoradas estilo Pinterest -->
 <section id="galerias" class="container mx-auto my-10 px-4">
   <h2 class="text-4xl font-bold text-center mb-8 text-primary">Galería de Publicaciones</h2>
 
   <!-- Categorías -->
-  <div class="flex justify-center gap-4 mb-6">
-    <button class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+  <div class="flex flex-wrap justify-center gap-4 mb-6">
+    <button class="px-4 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-700 transition"
       onclick="filterCategory('web')">Desarrollo Web</button>
-    <button class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+    <button class="px-4 py-2 rounded-lg bg-green-500 text-white hover:bg-green-700 transition"
       onclick="filterCategory('movil')">Desarrollo Móvil</button>
-    <button class="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition"
+    <button class="px-4 py-2 rounded-lg bg-purple-500 text-white hover:bg-purple-700 transition"
       onclick="filterCategory('ia')">Inteligencia Artificial</button>
-    <button class="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
+    <button class="px-4 py-2 rounded-lg bg-orange-500 text-white hover:bg-orange-700 transition"
       onclick="filterCategory('negocios')">Inteligencia de Negocios</button>
   </div>
 
   <!-- Contenido de la galería -->
-  <div id="galeria-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    <!-- Publicación de ejemplo -->
-    <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
-      <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
+  <div id="galeria-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Publicaciones -->
+    <article class="bg-white p-4 rounded-lg shadow-lg space-y-4 post transition transform hover:scale-105"
+      data-category="web">
       <img src="asset/img/portada1200x400.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
+      <h3 class="text-xl font-semibold">Desarrollo Web con Astro</h3>
       <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
       <div class="flex items-center justify-between text-gray-600 text-sm">
         <span>👀 1,2k vistas</span>
         <span>❤️ 300</span>
       </div>
-     
     </article>
 
-        <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
-          <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
-          <img src="asset/img/portada1200x400.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
-          <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
-          <div class="flex items-center justify-between text-gray-600 text-sm">
-            <span>👀 1,2k vistas</span>
-            <span>❤️ 300</span>
-          </div>
-         
-        </article>
-
-            <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="web">
-      <h3 class="text-2xl font-semibold">Desarrollo Web con Astro</h3>
-      <img src="asset/img/portada1200x400.jpg" alt="Imagen Web" class="w-full h-56 object-cover rounded-lg">
-      <p class="text-gray-700">Exploramos las ventajas de Astro para sitios estáticos y SPA.</p>
-      <div class="flex items-center justify-between text-gray-600 text-sm">
-        <span>👀 1,2k vistas</span>
-        <span>❤️ 300</span>
-      </div>
-     
-    </article>
-
-
-    <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
-      <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
+    <article class="bg-white p-4 rounded-lg shadow-lg space-y-4 post transition transform hover:scale-105"
+      data-category="movil">
       <img src="asset/img/portada1200x400.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
+      <h3 class="text-xl font-semibold">Apps Móviles con Flutter</h3>
       <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
       <div class="flex items-center justify-between text-gray-600 text-sm">
         <span>👀 800 vistas</span>
         <span>👍 200</span>
       </div>
-     
     </article>
-
-        <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
-          <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
-          <img src="asset/img/portada1200x400.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
-          <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
-          <div class="flex items-center justify-between text-gray-600 text-sm">
-            <span>👀 800 vistas</span>
-            <span>👍 200</span>
-          </div>
-         
-        </article>
-
-            <article class="bg-white p-6 rounded-lg shadow-lg space-y-4 post" data-category="movil">
-              <h3 class="text-2xl font-semibold">Apps Móviles con Flutter</h3>
-              <img src="asset/img/portada1200x400.jpg" alt="Imagen Móvil" class="w-full h-56 object-cover rounded-lg">
-              <p class="text-gray-700">Flutter es una excelente opción para apps multiplataforma.</p>
-              <div class="flex items-center justify-between text-gray-600 text-sm">
-                <span>👀 800 vistas</span>
-                <span>👍 200</span>
-              </div>
-             
-            </article>
   </div>
 </section>
 
-<!-- Script -->
+<!-- Script para filtrar publicaciones -->
 <script>
   function filterCategory(category) {
     document.querySelectorAll('.post').forEach(post => {
@@ -793,7 +747,6 @@
 </script>
 
 
-
 <!-- Sección de Reseñas -->
 <section id="reseñas" class="container mx-auto my-12 px-4">
   <h2 class="text-4xl font-bold text-center mb-8 text-primary dark:text-white">Opiniones de Estudiantes</h2>
@@ -803,45 +756,56 @@
     <div class="swiper-wrapper">
 
       <!-- Reseña 1 -->
-      <div class="swiper-slide bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <img src="asset/img/portada1200x400.jpg" class="w-20 h-20 mx-auto rounded-full mb-4">
-        <p class="text-lg italic text-gray-700 dark:text-gray-300">"Astro ha sido increíble para sitios rápidos y
-          dinámicos."</p>
-        <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Carlos Mendoza</h4>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Desarrollo Web</span>
+      <div class="swiper-slide flex justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <img src="asset/img/user1.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-lg italic text-gray-700 dark:text-gray-300">"Astro ha sido increíble para sitios rápidos y
+            dinámicos."</p>
+          <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Carlos Mendoza</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Desarrollo Web</span>
+        </div>
       </div>
 
       <!-- Reseña 2 -->
-      <div class="swiper-slide bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <img src="asset/img/portada1200x400.jpg" class="w-20 h-20 mx-auto rounded-full mb-4">
-        <p class="text-lg italic text-gray-700 dark:text-gray-300">"Flutter es genial para apps móviles."</p>
-        <h4 class="font-bold mt-4 text-gray-900 dark:text-white">María López</h4>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Desarrollo Móvil</span>
+      <div class="swiper-slide flex justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <img src="asset/img/user2.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-lg italic text-gray-700 dark:text-gray-300">"Flutter es genial para apps móviles."</p>
+          <h4 class="font-bold mt-4 text-gray-900 dark:text-white">María López</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Desarrollo Móvil</span>
+        </div>
       </div>
 
       <!-- Reseña 3 -->
-      <div class="swiper-slide bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <img src="asset/img/portada1200x400.jpg" class="w-20 h-20 mx-auto rounded-full mb-4">
-        <p class="text-lg italic text-gray-700 dark:text-gray-300">"Aprender IA me ha abierto muchas oportunidades."</p>
-        <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Juan Pérez</h4>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Inteligencia Artificial</span>
+      <div class="swiper-slide flex justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <img src="asset/img/user3.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-lg italic text-gray-700 dark:text-gray-300">"Aprender IA me ha abierto muchas oportunidades."
+          </p>
+          <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Juan Pérez</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Inteligencia Artificial</span>
+        </div>
       </div>
 
       <!-- Reseña 4 -->
-      <div class="swiper-slide bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <img src="asset/img/portada1200x400.jpg" class="w-20 h-20 mx-auto rounded-full mb-4">
-        <p class="text-lg italic text-gray-700 dark:text-gray-300">"El análisis de datos es clave para negocios."</p>
-        <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Ana Silva</h4>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Inteligencia de Negocios</span>
+      <div class="swiper-slide flex justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <img src="asset/img/user4.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-lg italic text-gray-700 dark:text-gray-300">"El análisis de datos es clave para negocios."</p>
+          <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Ana Silva</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Inteligencia de Negocios</span>
+        </div>
       </div>
 
       <!-- Reseña 5 -->
-      <div class="swiper-slide bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <img src="asset/img/portada1200x400.jpg" class="w-20 h-20 mx-auto rounded-full mb-4">
-        <p class="text-lg italic text-gray-700 dark:text-gray-300">"Ciberseguridad me ha ayudado a proteger sistemas."
-        </p>
-        <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Roberto Castillo</h4>
-        <span class="text-sm text-gray-500 dark:text-gray-400">Ciberseguridad</span>
+      <div class="swiper-slide flex justify-center">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center max-w-sm">
+          <img src="asset/img/user5.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 object-cover">
+          <p class="text-lg italic text-gray-700 dark:text-gray-300">"Ciberseguridad me ha ayudado a proteger sistemas."
+          </p>
+          <h4 class="font-bold mt-4 text-gray-900 dark:text-white">Roberto Castillo</h4>
+          <span class="text-sm text-gray-500 dark:text-gray-400">Ciberseguridad</span>
+        </div>
       </div>
 
     </div>
@@ -858,9 +822,15 @@
   new Swiper('.swiper-container', {
     loop: true,
     autoplay: { delay: 4000 },
+    slidesPerView: 1,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    },
     pagination: { el: '.swiper-pagination', clickable: true }
   });
 </script>
+
 
 
 <!-- Contacto  -->
@@ -901,7 +871,6 @@
   </div>
 </section>
 
-
 <!-- Sección de Sponsors -->
 <section id="sponsors" class="container mx-auto my-12 px-4">
   <h2 class="text-4xl font-bold text-center mb-8 text-primary dark:text-white">Nuestros Sponsors</h2>
@@ -912,27 +881,37 @@
 
       <!-- Sponsor 1 -->
       <div class="swiper-slide flex justify-center">
-        <img src="asset/img/portada1200x400.jpg" alt="Sponsor 1" class="h-20 object-contain">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
+          <img src="asset/img/sponsor1.png" alt="Sponsor 1" class="h-16 object-contain">
+        </div>
       </div>
 
       <!-- Sponsor 2 -->
       <div class="swiper-slide flex justify-center">
-        <img src="asset/img/portada1200x400.jpg" alt="Sponsor 2" class="h-20 object-contain">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
+          <img src="asset/img/sponsor2.png" alt="Sponsor 2" class="h-16 object-contain">
+        </div>
       </div>
 
       <!-- Sponsor 3 -->
       <div class="swiper-slide flex justify-center">
-        <img src="asset/img/portada1200x400.jpg" alt="Sponsor 3" class="h-20 object-contain">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
+          <img src="asset/img/sponsor3.png" alt="Sponsor 3" class="h-16 object-contain">
+        </div>
       </div>
 
       <!-- Sponsor 4 -->
       <div class="swiper-slide flex justify-center">
-        <img src="asset/img/portada1200x400.jpg" alt="Sponsor 4" class="h-20 object-contain">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
+          <img src="asset/img/sponsor4.png" alt="Sponsor 4" class="h-16 object-contain">
+        </div>
       </div>
 
       <!-- Sponsor 5 -->
       <div class="swiper-slide flex justify-center">
-        <img src="asset/img/portada1200x400.jpg" alt="Sponsor 5" class="h-20 object-contain">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 flex justify-center items-center">
+          <img src="asset/img/sponsor5.png" alt="Sponsor 5" class="h-16 object-contain">
+        </div>
       </div>
 
     </div>
@@ -948,10 +927,16 @@
 <script>
   new Swiper('.swiper-container', {
     loop: true,
-    autoplay: { delay: 3000 },
+    autoplay: { delay: 2500 },
+    slidesPerView: 1,
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    },
     pagination: { el: '.swiper-pagination', clickable: true }
   });
 </script>
+
 
 
 <!-- Footer  -->
