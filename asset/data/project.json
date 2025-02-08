@@ -13,7 +13,7 @@
     "titulo": "ia-assistant",
     "autora": "Carlos López",
     "descripcion": "Un asistente basado en inteligencia artificial para mejorar la productividad.",
-    "img": "asset/img/proyecto2.jpg",
+    "img": "asset/img/IMG_20221001_175958.jpg",
     "redes": {
       "github": "https://github.com/carlos/ia-assistant",
       "demo": "https://demo.ia-assistant.com"
@@ -23,7 +23,7 @@
     "titulo": "seguro-max",
     "autora": "Luishiño Pericena",
     "descripcion": "Un sistema seguro para gestionar información confidencial.",
-    "img": "asset/img/proyecto3.jpg",
+    "img": "asset/img/IMG_20221001_175958.jpg",
     "redes": {
       "github": "https://github.com/luishino/seguro-max",
       "demo": "https://demo.seguro-max.com"

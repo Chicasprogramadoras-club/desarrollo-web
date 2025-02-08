@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Carlos Mendoza",
+    "curso": "Desarrollo Web",
+    "comentario": "Astro ha sido increíble para sitios rápidos y dinámicos.",
+    "imagen": "asset/img/mentor/Luishiño.png"
+  },
+  {
+    "nombre": "María López",
+    "curso": "Desarrollo Móvil",
+    "comentario": "Flutter es genial para apps móviles.",
+    "imagen": "asset/img/mentor/Luishiño.png"
+  },
+  {
+    "nombre": "Juan Pérez",
+    "curso": "Inteligencia Artificial",
+    "comentario": "Aprender IA me ha abierto muchas oportunidades.",
+    "imagen": "asset/img/mentor/Luishiño.png"
+  },
+  {
+    "nombre": "Ana Silva",
+    "curso": "Inteligencia de Negocios",
+    "comentario": "El análisis de datos es clave para negocios.",
+    "imagen": "asset/img/mentor/Luishiño.png"
+  },
+  {
+    "nombre": "Roberto Castillo",
+    "curso": "Ciberseguridad",
+    "comentario": "Ciberseguridad me ha ayudado a proteger sistemas.",
+    "imagen": "asset/img/mentor/Luishiño.png"
+  }
+]
