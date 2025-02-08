@@ -3,7 +3,7 @@
     const reviewContainer = document.getElementById("review-container");
 
     try {
-      const response = await fetch("/asset/data/review.json"); // Cambia esto a la URL de tu API si es necesario
+      const response = await fetch("asset/data/review.json"); // Cambia esto a la URL de tu API si es necesario
       const data = await response.json();
 
       data.forEach(resena => {

@@ -1,5 +1,5 @@
 
-  const proyectosURL = "/asset/data/project.json"; // Archivo JSON
+  const proyectosURL = "asset/data/project.json"; // Archivo JSON
 
   // Configuración de la paginación
   const proyectosPerPage = 3;

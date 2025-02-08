@@ -11,7 +11,7 @@
 
     async function fetchVideos() {
       try {
-        const response = await fetch("/asset/data/video.json");
+        const response = await fetch("asset/data/video.json");
         if (!response.ok) {
           throw new Error("Error al cargar los videos.");
         }

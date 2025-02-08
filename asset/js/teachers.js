@@ -1,5 +1,5 @@
 
-  const API_URL = '/asset/data/teachers.json'; // Reemplázala con la URL de tu API
+  const API_URL = 'asset/data/teachers.json'; // Reemplázala con la URL de tu API
   let profesores = [];
   const profesorContainer = document.getElementById('profesor-container');
   const prevBtn = document.getElementById('prev-btn');

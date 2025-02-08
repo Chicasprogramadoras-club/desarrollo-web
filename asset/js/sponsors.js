@@ -5,7 +5,7 @@
 
     async function fetchSponsors() {
       try {
-        const response = await fetch("/asset/data/sponsors.json");
+        const response = await fetch("asset/data/sponsors.json");
         if (!response.ok) throw new Error("Error al cargar los sponsors.");
         const sponsors = await response.json();
         renderSponsors(sponsors);
